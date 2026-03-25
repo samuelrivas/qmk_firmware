@@ -19,16 +19,27 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0] = LAYOUT_split_3x6_3_ex2(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_C,      KC_D,    KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_LCTL,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,   KC_B,      KC_A,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   MO(1),  KC_SPC,     KC_ENT,   MO(2), KC_RALT
-                                      //`--------------------------'  `--------------------------'
+  [0] = LAYOUT_split_3x6_3_ex2
+  (
+   // Row 1, left
+   KC_TAB, KC_Q, KC_W, KC_F, KC_P, KC_B, QK_BOOT,
+   // Row 1, right
+   KC_NO, KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_BSPC,
+
+   // Row 2, left
+   KC_LCTL, LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G, KC_NO,
+   // Row 2, right
+   KC_NO, KC_M, RSFT_T(KC_N), RCTL_T(KC_E), RALT_T(KC_I), RGUI_T(KC_O), KC_QUOT,
+
+   // Row 3, left
+   KC_LSFT, KC_Z, KC_X, KC_C, KC_D, KC_V,
+   // Row 3, right
+   KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_ESC,
+
+   // Thumb left
+   KC_LGUI, MO(1), KC_SPC,
+   // Thumb right
+   KC_ENT, MO(2), KC_RALT
 
   // ),
 
