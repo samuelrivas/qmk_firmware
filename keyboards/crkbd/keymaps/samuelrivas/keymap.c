@@ -36,14 +36,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3_ex2
   (
    // Row 1, left
-   KC_TAB, KC_Q, KC_W, KC_F, KC_P, KC_B, QK_BOOT,
+   KC_NO, KC_Q, KC_W, KC_F, KC_P, KC_B, QK_BOOT,
    // Row 1, right
    UG_NEXT, KC_J, KC_L, KC_U, KC_Y, KC_QUOT, KC_NO,
 
    // Row 2, left
-   KC_LCTL, LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G, KC_NO,
+   KC_NO, LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G, KC_NO,
    // Row 2, right
-   UG_TOGG, KC_M, RSFT_T(KC_N), RCTL_T(KC_E), RALT_T(KC_I), RGUI_T(KC_O), KC_QUOT,
+   UG_TOGG, KC_M, RSFT_T(KC_N), RCTL_T(KC_E), RALT_T(KC_I), RGUI_T(KC_O), KC_NO,
 
    // Row 3, left
    KC_NO, KC_Z, KC_X, KC_C, KC_D, KC_V,
