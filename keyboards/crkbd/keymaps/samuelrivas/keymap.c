@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_NO,
 
    // Thumb left
-   KC_ESC, KC_TAB, KC_SPC,
+   KC_ESC, LT(2, KC_TAB), KC_SPC,
    // Thumb right
    KC_ENT, LT(1, KC_BSPC), KC_DEL
   ),
@@ -76,6 +76,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    // Thumb left
    KC_DOT, KC_0, KC_MINUS,
+   // Thumb right
+   KC_TRNS, KC_TRNS, KC_TRNS
+   ),
+
+  // Nav
+  [2] = LAYOUT_split_3x6_3_ex2
+  (
+   // Row 1, left
+   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+   // Row 1, right
+   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+
+   // Row 2, left
+   KC_NO, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO, KC_NO,
+   // Row 2, right
+   KC_NO, KC_CAPS, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_NO,
+
+   // Row 3, left
+   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+   // Row 3, right
+   KC_NO, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_NO,
+
+   // Thumb left
+   KC_TRNS, KC_TRNS, KC_TRNS,
    // Thumb right
    KC_TRNS, KC_TRNS, KC_TRNS
   )
