@@ -60,17 +60,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_split_3x6_3_ex2
   (
    // Row 1, left
-   KC_NO, KC_NO, KC_7, KC_8, KC_9, KC_NO, KC_NO,
+   KC_NO, KC_LBRC, KC_7, KC_8, KC_9, KC_RBRC, KC_NO,
    // Row 1, right
    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, TD(TD_QK_BOOT), KC_NO,
 
    // Row 2, left
-   KC_NO, KC_NO, KC_4, KC_5, KC_6, KC_NO, KC_NO,
+   KC_NO, KC_SCLN, KC_4, KC_5, KC_6, KC_EQL, KC_NO,
    // Row 2, right
    KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, KC_NO,
 
    // Row 3, left
-   KC_NO, KC_NO, KC_1, KC_2, KC_3, KC_NO,
+   KC_NO, KC_GRV, KC_1, KC_2, KC_3, KC_BSLS,
    // Row 3, right
    KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_ESC,
 
