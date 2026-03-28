@@ -18,6 +18,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 
+void doubletap_ug_toggle(tap_dance_state_t *state, void *user_data);
+void doubletap_qk_boot(tap_dance_state_t *state, void *user_data);
+
+enum {
+  TD_UG_TOGG,
+  TD_QK_BOOT,
+};
+
+tap_dance_action_t tap_dance_actions[] = {
+  [TD_UG_TOGG] = ACTION_TAP_DANCE_FN(doubletap_ug_toggle),
+  [TD_QK_BOOT] = ACTION_TAP_DANCE_FN(doubletap_qk_boot),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // base
   [0] = LAYOUT_split_3x6_3_ex2
@@ -49,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    // Row 1, left
    KC_NO, KC_NO, KC_7, KC_8, KC_9, KC_NO, KC_NO,
    // Row 1, right
-   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, TD(TD_QK_BOOT), KC_NO,
 
    // Row 2, left
    KC_NO, KC_NO, KC_4, KC_5, KC_6, KC_NO, KC_NO,
@@ -76,3 +89,17 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
   [3] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_MPRV, KC_MNXT), ENCODER_CCW_CW(RM_VALD, RM_VALU), ENCODER_CCW_CW(KC_RGHT, KC_LEFT), },
 };
 #endif
+
+void doubletap_ug_toggle(tap_dance_state_t *state, void *user_data) {
+  if (state->count >= 2) {
+    rgblight_toggle();
+    reset_tap_dance(state);
+  }
+}
+
+void doubletap_qk_boot(tap_dance_state_t *state, void *user_data) {
+  if (state->count >= 2) {
+    reset_keyboard();
+    reset_tap_dance(state);
+  }
+}
