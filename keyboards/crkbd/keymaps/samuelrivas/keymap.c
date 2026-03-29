@@ -59,9 +59,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_NO,
 
    // Thumb left
-   KC_ESC, LT(L_NAV, KC_TAB), KC_SPC,
+   KC_ESC, KC_TAB, LT(L_NAV, KC_SPC),
    // Thumb right
-   LT(L_SYM, KC_ENT), LT(L_NUM, KC_BSPC), LT(L_F, KC_DEL)
+   LT(L_NUM, KC_ENT), LT(L_SYM, KC_BSPC), LT(L_F, KC_DEL)
    ),
 
   // Num
