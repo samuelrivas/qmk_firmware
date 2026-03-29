@@ -25,7 +25,8 @@ enum {
   L_BASE,
   L_NUM,
   L_NAV,
-  L_SYM
+  L_SYM,
+  L_F
 };
 
 enum {
@@ -60,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    // Thumb left
    KC_ESC, LT(L_NAV, KC_TAB), KC_SPC,
    // Thumb right
-   KC_ENT, LT(L_NUM, KC_BSPC), LT(L_SYM, KC_DEL)
+   LT(L_SYM, KC_ENT), LT(L_NUM, KC_BSPC), LT(L_F, KC_DEL)
    ),
 
   // Num
@@ -131,6 +132,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    // Thumb left
    S(KC_9), S(KC_0), S(KC_MINUS),
+   // Thumb right
+   KC_TRNS, KC_TRNS, KC_TRNS
+   ),
+
+  // F
+  [L_F] = LAYOUT_split_3x6_3_ex2
+  (
+   // Row 1, left
+   KC_NO, KC_F12, KC_F7, KC_F8, KC_F9, KC_NO, KC_NO,
+   // Row 1, right
+   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, TD(TD_QK_BOOT), KC_NO,
+
+   // Row 2, left
+   KC_NO, KC_F11, KC_F4, KC_F5, KC_F6, KC_NO, KC_NO,
+   // Row 2, right
+   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, KC_NO,
+
+   // Row 3, left
+   KC_NO, KC_F10, KC_F1, KC_F2, KC_F3, KC_NO,
+   // Row 3, right
+   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+
+   // Thumb left
+   KC_TRNS, KC_TRNS, KC_TRNS,
    // Thumb right
    KC_TRNS, KC_TRNS, KC_TRNS
    )
