@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [L_BASE] = LAYOUT_split_3x6_3_ex2
   (
    // Row 1, left
-   KC_NO, KC_Q, KC_W, KC_F, KC_P, KC_B, QK_BOOT,
+   KC_NO, KC_Q, KC_W, KC_F, KC_P, KC_B, KC_NO,
    // Row 1, right
    UG_NEXT, KC_J, KC_L, KC_U, KC_Y, KC_QUOT, KC_NO,
 
