@@ -22,6 +22,13 @@ void doubletap_ug_toggle(tap_dance_state_t *state, void *user_data);
 void doubletap_qk_boot(tap_dance_state_t *state, void *user_data);
 
 enum {
+  L_BASE,
+  L_NUM,
+  L_NAV,
+  L_SYM
+};
+
+enum {
   TD_UG_TOGG,
   TD_QK_BOOT,
 };
@@ -33,7 +40,7 @@ tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // base
-  [0] = LAYOUT_split_3x6_3_ex2
+  [L_BASE] = LAYOUT_split_3x6_3_ex2
   (
    // Row 1, left
    KC_NO, KC_Q, KC_W, KC_F, KC_P, KC_B, QK_BOOT,
@@ -51,13 +58,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_NO,
 
    // Thumb left
-   KC_ESC, LT(2, KC_TAB), KC_SPC,
+   KC_ESC, LT(L_NAV, KC_TAB), KC_SPC,
    // Thumb right
-   KC_ENT, LT(1, KC_BSPC), KC_DEL
-  ),
+   KC_ENT, LT(L_NUM, KC_BSPC), LT(L_SYM, KC_DEL)
+   ),
 
   // Num
-  [1] = LAYOUT_split_3x6_3_ex2
+  [L_NUM] = LAYOUT_split_3x6_3_ex2
   (
    // Row 1, left
    KC_NO, KC_LBRC, KC_7, KC_8, KC_9, KC_RBRC, KC_NO,
@@ -81,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ),
 
   // Nav
-  [2] = LAYOUT_split_3x6_3_ex2
+  [L_NAV] = LAYOUT_split_3x6_3_ex2
   (
    // Row 1, left
    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
@@ -102,7 +109,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_TRNS, KC_TRNS, KC_TRNS,
    // Thumb right
    KC_TRNS, KC_TRNS, KC_TRNS
-  )
+   ),
+
+  // Sym
+  [L_SYM] = LAYOUT_split_3x6_3_ex2
+  (
+   // Row 1, left
+   KC_NO, S(KC_LBRC), S(KC_7), S(KC_8), S(KC_9), S(KC_RBRC), KC_NO,
+   // Row 1, right
+   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, TD(TD_QK_BOOT), KC_NO,
+
+   // Row 2, left
+   KC_NO, S(KC_SCLN), S(KC_4), S(KC_5), S(KC_6), S(KC_EQL), KC_NO,
+   // Row 2, right
+   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, KC_NO,
+
+   // Row 3, left
+   KC_NO, S(KC_GRV), S(KC_1), S(KC_2), S(KC_3), S(KC_BSLS),
+   // Row 3, right
+   KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_ESC,
+
+   // Thumb left
+   S(KC_9), S(KC_0), S(KC_MINUS),
+   // Thumb right
+   KC_TRNS, KC_TRNS, KC_TRNS
+   )
 };
 
 #ifdef ENCODER_MAP_ENABLE
