@@ -49,9 +49,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    UG_NEXT, KC_J, KC_L, KC_U, KC_Y, KC_QUOT, KC_NO,
 
    // Row 2, left
-   KC_NO, LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G, KC_NO,
+   RALT(KC_QUOT), LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G, KC_NO,
    // Row 2, right
-   UG_TOGG, KC_M, RSFT_T(KC_N), RCTL_T(KC_E), LALT_T(KC_I), RGUI_T(KC_O), KC_NO,
+   UG_TOGG, KC_M, RSFT_T(KC_N), RCTL_T(KC_E), LALT_T(KC_I), RGUI_T(KC_O), RALT(KC_N),
 
    // Row 3, left
    KC_NO, KC_Z, KC_X, KC_C, KC_D, KC_V,
