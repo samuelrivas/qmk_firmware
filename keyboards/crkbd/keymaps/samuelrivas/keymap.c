@@ -23,6 +23,7 @@ void doubletap_qk_boot(tap_dance_state_t *state, void *user_data);
 
 enum {
   L_BASE,
+  L_SE,
   L_NUM,
   L_NAV,
   L_SYM,
@@ -56,12 +57,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    // Row 3, left
    KC_NO, KC_Z, KC_X, KC_C, KC_D, KC_V,
    // Row 3, right
-   KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_NO,
+   KC_K, KC_H, KC_COMM, KC_DOT, KC_SLSH, TG(L_SE),
 
    // Thumb left
    KC_ESC, LT(L_NAV, KC_SPC), KC_TAB,
    // Thumb right
    LT(L_SYM, KC_ENT), LT(L_NUM, KC_BSPC), LT(L_F, KC_DEL)
+   ),
+
+  // Swedish letters
+  [L_SE]  = LAYOUT_split_3x6_3_ex2
+  (
+   // Row 1, left
+   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+   // Row 1, right
+   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RALT(KC_P),
+
+   // Row 2, left
+   RALT(KC_W), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+   // Row 2, right
+   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RALT(KC_Q),
+
+   // Row 3, left
+   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+   // Row 3, right
+   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+
+   // Thumb left
+   KC_TRNS, KC_TRNS, KC_TRNS,
+   // Thumb right
+   KC_TRNS, KC_TRNS, KC_TRNS
    ),
 
   // Num
