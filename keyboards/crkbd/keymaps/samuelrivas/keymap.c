@@ -135,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    // Row 2, left
    KC_NO, KC_SCLN, KC_4, KC_5, KC_6, KC_EQL, KC_NO,
    // Row 2, right
-   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, KC_NO,
+   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,
 
    // Row 3, left
    KC_NO, KC_GRV, KC_1, KC_2, KC_3, KC_BSLS,
@@ -183,7 +183,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    // Row 2, left
    KC_NO, S(KC_SCLN), S(KC_4), S(KC_5), S(KC_6), S(KC_EQL), KC_NO,
    // Row 2, right
-   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, KC_NO,
+   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,
 
    // Row 3, left
    KC_NO, S(KC_GRV), S(KC_1), S(KC_2), S(KC_3), S(KC_BSLS),
@@ -207,7 +207,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    // Row 2, left
    KC_NO, KC_F11, KC_F4, KC_F5, KC_F6, KC_NO, KC_NO,
    // Row 2, right
-   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, KC_NO,
+   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,
 
    // Row 3, left
    KC_NO, KC_F10, KC_F1, KC_F2, KC_F3, KC_NO,
