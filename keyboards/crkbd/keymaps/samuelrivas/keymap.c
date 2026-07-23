@@ -54,40 +54,24 @@ enum my_tap_dance {
   TD_QK_BOOT,
 };
 
-enum my_custom_key_codes {
-  KC_MAC_TOGGLE = SAFE_RANGE
-};
-
 tap_dance_action_t tap_dance_actions[] = {
   [TD_UG_TOGG] = ACTION_TAP_DANCE_FN(doubletap_ug_toggle),
   [TD_QK_BOOT] = ACTION_TAP_DANCE_FN(doubletap_qk_boot),
 };
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-  case KC_MAC_TOGGLE:
-    if (record -> event.pressed) {
-      keymap_config.swap_lalt_lgui = !keymap_config.swap_lalt_lgui;
-      eeconfig_update_keymap(&keymap_config);
-    }
-    return false;
-  }
-  return true;
-}
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // base
   [L_BASE] = LAYOUT_split_3x6_3_ex2
   (
    // Row 1, left
-   KC_NO, KC_Q, KC_W, KC_F, KC_P, KC_B, KC_MAC_TOGGLE,
+   KC_NO, KC_Q, KC_W, KC_F, KC_P, KC_B, QK_MAGIC_TOGGLE_CTL_GUI,
    // Row 1, right
    UG_NEXT, KC_J, KC_L, KC_U, KC_Y, KC_QUOT, KC_NO,
 
    // Row 2, left
    RALT(KC_QUOT), LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G, KC_NO,
    // Row 2, right
-   UG_TOGG, KC_M, RSFT_T(KC_N), RCTL_T(KC_E), LALT_T(KC_I), LGUI_T(KC_O), RALT(KC_N),
+   UG_TOGG, KC_M, RSFT_T(KC_N), RCTL_T(KC_E), LALT_T(KC_I), RGUI_T(KC_O), RALT(KC_N),
 
    // Row 3, left
    KC_NO, KC_Z, KC_X, KC_C, KC_D, KC_V,
@@ -135,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    // Row 2, left
    KC_NO, KC_SCLN, KC_4, KC_5, KC_6, KC_EQL, KC_NO,
    // Row 2, right
-   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,
+   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, KC_NO,
 
    // Row 3, left
    KC_NO, KC_GRV, KC_1, KC_2, KC_3, KC_BSLS,
@@ -183,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    // Row 2, left
    KC_NO, S(KC_SCLN), S(KC_4), S(KC_5), S(KC_6), S(KC_EQL), KC_NO,
    // Row 2, right
-   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,
+   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, KC_NO,
 
    // Row 3, left
    KC_NO, S(KC_GRV), S(KC_1), S(KC_2), S(KC_3), S(KC_BSLS),
@@ -207,7 +191,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    // Row 2, left
    KC_NO, KC_F11, KC_F4, KC_F5, KC_F6, KC_NO, KC_NO,
    // Row 2, right
-   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_LGUI, KC_NO,
+   KC_NO, KC_NO, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, KC_NO,
 
    // Row 3, left
    KC_NO, KC_F10, KC_F1, KC_F2, KC_F3, KC_NO,
